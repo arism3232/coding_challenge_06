@@ -28,3 +28,19 @@ const calculateBonus = (salary, performanceRating) => {
 // Test Data
 calculateBonus(5000, "Excellent");
 calculateBonus(7000, "Good");
+
+// Task4- Parameters and Arguments
+function calculateSubscriptionCost(plan, months, discount = 0) {
+    let pricePerMonth = 0;
+    switch (plan) {
+        case "Basic": pricePerMonth = 10; break;
+        case "Premium": pricePerMonth = 20; break;
+        case "Enterprise": pricePerMonth = 50; break;
+        default: console.log("Invalid plan"); return;
+    }
+    let totalCost = (pricePerMonth * months) - discount;
+    console.log(`Total Cost: $${totalCost}`);
+}; // Calculating cost based on plans.
+// Test Data
+calculateSubscriptionCost("Basic", 6, 10);
+calculateSubscriptionCost("Premium", 12, 0);
