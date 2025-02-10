@@ -54,7 +54,7 @@ function convertCurrency(amount, exchangeRate) {
 console.log(convertCurrency(100, 1.1));
 console.log(convertCurrency(250, 0.85));
 
-// Higher-Order Functions
+// Task6- Higher-Order Functions
 let orders = [200, 600, 1200, 450, 800];
 function applyBulkDiscount(orders, discountFunction) {
     return orders.map(discountFunction);
@@ -63,3 +63,16 @@ let discountFunction = amount => amount > 500 ? amount * 0.9 : amount;
 let discountedOrders = applyBulkDiscount(orders, discountFunction);
 // Test Data
 console.log(discountedOrders);
+
+// Task7- Closures
+function createExpenseTracker() {
+    let totalExpenses = 0;
+    return function(expense) {
+        totalExpenses += expense;
+        return `Total Expenses: $${totalExpenses}`;
+    };
+}; // Writing function that returns function to add expenses.
+// Test Data
+let tracker = createExpenseTracker();
+console.log(tracker(200));
+console.log(tracker(150));
