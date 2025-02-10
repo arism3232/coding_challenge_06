@@ -76,3 +76,14 @@ function createExpenseTracker() {
 let tracker = createExpenseTracker();
 console.log(tracker(200));
 console.log(tracker(150));
+
+// Task8- Recursion in JavaScript
+function calculateYearsToPromotion(employeeLevel) {
+    if (employeeLevel >= 10) {
+        return "Years to Level 10: 0";
+    }
+    else return `Years to Level 10: ${(10 - employeeLevel) * 2}`;
+}; // Promotion takes 2 years.
+// Test Data
+console.log(calculateYearsToPromotion(7));
+console.log(calculateYearsToPromotion(5));
